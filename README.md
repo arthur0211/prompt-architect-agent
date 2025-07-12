@@ -19,9 +19,9 @@ Um agente inteligente construído com Google ADK que atua como um arquiteto de p
 - Formato padronizado com tags XML e markdown
 
 ### Ferramentas Integradas
-- **Busca Web**: Pesquisa usando DuckDuckGo para informações complementares
-- **Fetch URL**: Extração de conteúdo de URLs específicas
-- **Leitura de Documentos**: Análise de arquivos locais
+- **Google Search**: Busca oficial do Google integrada ao ADK para informações de alta qualidade
+- **Fetch URL**: Extração de conteúdo de URLs específicas (versão com custom tools)
+- **Leitura de Documentos**: Análise de arquivos locais (versão com custom tools)
 
 ## Instalação
 
@@ -124,10 +124,25 @@ Obtenha sua chave da API do Gemini:
 
 ## Arquitetura Técnica
 
-- **Modelo**: Gemini 2.5 Pro (configurável)
+- **Modelo**: Gemini 2.0 Flash (otimizado para built-in tools)
 - **Framework**: Google AI Development Kit (ADK)
-- **Ferramentas**: Apenas custom tools (sem mistura com built-in tools)
-- **Busca**: DuckDuckGo (sem necessidade de API key)
+- **Ferramentas**: Google Search built-in (agente principal)
+- **Busca**: Google Search oficial via ADK
+- **Alternativa**: Versão com custom tools disponível para casos específicos
+
+## Versões do Agente
+
+### Agente Principal (Recomendado)
+- **Modelo**: `gemini-2.0-flash`
+- **Ferramenta**: Google Search built-in
+- **Uso**: `create_prompt_architect_agent()`
+- **Vantagens**: Resultados de alta qualidade, integração nativa
+
+### Agente com Custom Tools
+- **Modelo**: `gemini-2.0-flash`
+- **Ferramentas**: Custom web search + URL fetcher
+- **Uso**: `create_prompt_architect_agent_with_custom_tools()`
+- **Vantagens**: Mais flexibilidade, múltiplas ferramentas
 
 ## Suporte
 

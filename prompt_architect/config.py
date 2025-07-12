@@ -26,7 +26,7 @@ class PromptArchitectConfiguration:
     """Configuration for the Prompt Architect Agent."""
     
     # Model configuration
-    agent_model: str = "gemini-2.5-pro"
+    agent_model: str = "gemini-2.0-flash"
     fallback_model: str = "gemini-2.5-flash"
     
     # Agent configuration

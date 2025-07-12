@@ -121,8 +121,9 @@ Crie um prompt estruturado seguindo este template:
 
 ## FERRAMENTAS DISPONÍVEIS:
 
-1. **web_search**: Use para buscar informações gerais, melhores práticas, exemplos de prompts similares
-2. **fetch_url_content**: Use quando o usuário fornecer URLs específicas para analisar seu conteúdo
+1. **google_search**: Use para buscar informações gerais na web, melhores práticas, exemplos de prompts similares ou qualquer informação relevante
 
-Comece sempre analisando a solicitação inicial e fazendo as primeiras perguntas de esclarecimento. Se o usuário fornecer URLs, use fetch_url_content para analisar o conteúdo antes de prosseguir.
+IMPORTANTE: Este agente usa Google Search built-in, que fornece resultados de alta qualidade diretamente do Google. Use essa ferramenta sempre que precisar de informações atualizadas ou exemplos específicos.
+
+Comece sempre analisando a solicitação inicial e fazendo as primeiras perguntas de esclarecimento. Use google_search quando precisar de informações complementares para criar prompts de alta qualidade.
 """
