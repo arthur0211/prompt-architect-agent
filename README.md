@@ -19,15 +19,16 @@ Um agente inteligente construído com Google ADK que atua como um arquiteto de p
 - Formato padronizado com tags XML e markdown
 
 ### Ferramentas Integradas
-- **Busca Web**: Pesquisa Google para informações complementares
+- **Busca Web**: Pesquisa usando DuckDuckGo para informações complementares
 - **Fetch URL**: Extração de conteúdo de URLs específicas
 - **Leitura de Documentos**: Análise de arquivos locais
 
 ## Instalação
 
-1. **Clone/baixe o projeto**
+1. **Clone o projeto**
 ```bash
-cd prompt-architect
+git clone https://github.com/arthur0211/prompt-architect-agent.git
+cd prompt-architect-agent
 ```
 
 2. **Instale as dependências**
@@ -36,7 +37,7 @@ pip install -r requirements.txt
 ```
 
 3. **Configure a API Key**
-Edite o arquivo `.env` e adicione sua chave:
+Crie um arquivo `.env` e adicione sua chave:
 ```
 GEMINI_API_KEY=sua_chave_aqui
 ```
@@ -55,7 +56,7 @@ adk run
 
 ### Teste da Configuração
 ```bash
-python agent.py
+python -m prompt_architect.agent
 ```
 
 ## Como Funciona
@@ -100,15 +101,18 @@ Analisar datasets fornecidos e gerar insights acionáveis...
 ## Estrutura do Projeto
 
 ```
-prompt-architect/
-├── agent.py              # Agente principal
-├── tools/                # Ferramentas customizadas
-│   ├── web_search.py     # Busca na web
-│   ├── url_fetcher.py    # Fetch de URLs
-│   └── document_fetcher.py # Leitura de documentos
-├── requirements.txt      # Dependências
-├── .env                 # Configurações
-└── README.md           # Este arquivo
+prompt-architect-agent/
+├── prompt_architect/           # Pacote principal
+│   ├── agent.py               # Agente principal
+│   ├── config.py              # Configurações
+│   ├── prompt.py              # Instruções do agente
+│   └── tools/                 # Ferramentas customizadas
+│       ├── web_search.py      # Busca na web
+│       ├── url_fetcher.py     # Fetch de URLs
+│       └── document_fetcher.py # Leitura de documentos
+├── requirements.txt           # Dependências
+├── .env                      # Configurações (criar)
+└── README.md                # Este arquivo
 ```
 
 ## Configuração da API Key
@@ -118,9 +122,20 @@ Obtenha sua chave da API do Gemini:
 2. Crie uma nova API key
 3. Adicione no arquivo `.env`
 
+## Arquitetura Técnica
+
+- **Modelo**: Gemini 2.5 Pro (configurável)
+- **Framework**: Google AI Development Kit (ADK)
+- **Ferramentas**: Apenas custom tools (sem mistura com built-in tools)
+- **Busca**: DuckDuckGo (sem necessidade de API key)
+
 ## Suporte
 
 Para dúvidas e problemas, verifique:
 - Se a API key está corretamente configurada
 - Se todas as dependências foram instaladas
 - Se está usando Python 3.9+
+
+## Contribuição
+
+Contribuições são bem-vindas! Por favor, abra uma issue ou pull request.
